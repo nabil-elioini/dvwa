@@ -27,23 +27,3 @@ $ docker network inspect vulnado_default | jq -r '.[0].Containers[]|.IPv4Address
 
 Once you have this list try to execute a SSRF attack against the endpoint `/links`.
 
-<details>
-  <summary>Answer</summary>
-
-  The IP address that worked for you will likely be different, but this lab shows that even though you cannot access the internal site from outside, the web server can. Therefore, using a SSRF attack, you can gain valuable information from this internal site such as a list of internal email addresses.
-
-  ```
-  $ curl 'http://localhost:8080/links?url=http://172.19.0.2' | jq .
-  [
-    "mailto:alice@example.com?subject=feedback",
-    "mailto:bob@example.com?subject=feedback",
-    "mailto:tom@example.com?subject=feedback",
-    "mailto:eve@example.com?subject=feedback"
-  ]
-  ```
-
-  **Followup question:**
-  1. How would we validate the url that is being passed into this function?
-  2. Use the `/links-v2` and see if you can still break it.
-
-</details>
