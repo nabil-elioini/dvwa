@@ -21,11 +21,15 @@ The docker network created by `docker-compose` maps pretty well to a multi-tier 
 
 During the previous labs, many activities were related to input testing and validation. In the assigment, we want to focus on the security impact of user input and how a potential attacker can control and tak advantage of the user input. The assignment has been devided into two parts:
 
-### Attack serface and pen-testing
+### 1- Attack serface and pen-testing
 
 It consists of identifying the entry points of the system, then run a set of pen-testing payloads to observe how the application behaves. The goal of this activity is to identify any information leak or behaviour that grans access to the maliciouse user.
 
-### Code review (follow user input)
+For this task we can make use of two tools.
+- dirsearch: web path discovery [Github page](https://github.com/maurosoria/dirsearch).
+- Burp Suite: penetration testing and vulnerability finder tool [Link](https://portswigger.net/burp).
+
+### 2- Code review (follow user input)
 Since we have the source code of the application, we can perform more in depth analysis of the code. This activity consists of following user-controlled inputs and find how thoese input are managed by the application.
 
 Exmaples include query parameters or cookie values as well as external calls
