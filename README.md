@@ -46,3 +46,13 @@ Data read from a file or a cache
 * [XSS - Cross Site Scripting](exercises/02-xss.md)
 * [SSRF - Server Side Request Forgery](exercises/03-ssrf.md)
 * [RCE - Remote Code Execution & Reverse Shell](exercises/04-rce-reverse-shell.md)
+
+## Questions
+
+- What is the basic design of the application?
+- Who are the likely attackers?
+- What would an attacker hope to achieve?
+- How are the developers trying to protect the application?
+- What areas of the application will likely attract the attention of an attacker?
+- What sorts of techniques might an attacker use to subvert the application?
+- What risks would a successful attack pose to the application?
