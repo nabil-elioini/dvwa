@@ -17,6 +17,25 @@ The docker network created by `docker-compose` maps pretty well to a multi-tier 
 
 ![](exercises/assets/arch.png)
 
+## Goal of the assignment
+
+During the previous labs, many activities were related to input testing and validation. In the assigment, we want to focus on the security impact of user input and how a potential attacker can control and tak advantage of the user input. The assignment has been devided into two parts:
+
+### Attack serface and pen-testing
+
+It consists of identifying the entry points of the system, then run a set of pen-testing payloads to observe how the application behaves. The goal of this activity is to identify any information leak or behaviour that grans access to the maliciouse user.
+
+### Code review (follow user input)
+Since we have the source code of the application, we can perform more in depth analysis of the code. This activity consists of following user-controlled inputs and find how thoese input are managed by the application.
+
+Exmaples include query parameters or cookie values as well as external calls
+```
+POST / GET 
+COOKIE / SERVER
+Data coming from the database (for stored XSS and second-order injections for example)
+Data read from a file or a cache
+```
+
 ## Exercises
 
 * [SQL Injection](exercises/01-sql-injection.md)
