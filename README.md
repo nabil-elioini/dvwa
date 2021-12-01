@@ -26,15 +26,8 @@ The docker network created by `docker-compose` maps pretty well to a multi-tier 
 
 During the previous labs, many activities were related to input testing and validation. In the assigment, we want to focus on the security impact of user input and how a potential attacker can control and tak advantage of the user input. The assignment has been devided into two parts:
 
-### 1- Attack serface and pen-testing
 
-It consists of identifying the entry points of the system, then run a set of pen-testing payloads to observe how the application behaves. The goal of this activity is to identify any information leak or behaviour that grans access to the maliciouse user.
-
-For this task we can make use of two tools.
-- dirsearch: web path discovery [Github page](https://github.com/maurosoria/dirsearch).
-- Burp Suite: penetration testing and vulnerability finder tool [Link](https://portswigger.net/burp).
-
-### 2- Code review (follow user input)
+### 1- Code review (follow user input)
 Since we have the source code of the application, we can perform more in depth analysis of the code. This activity consists of following user-controlled inputs and find how thoese input are managed by the application.
 
 Exmaples include query parameters or cookie values as well as external calls
@@ -45,14 +38,7 @@ Data coming from the database (for stored XSS and second-order injections for ex
 Data read from a file or a cache
 ```
 
-## Exercises
-
-* [SQL Injection](exercises/01-sql-injection.md)
-* [XSS - Cross Site Scripting](exercises/02-xss.md)
-* [SSRF - Server Side Request Forgery](exercises/03-ssrf.md)
-* [RCE - Remote Code Execution & Reverse Shell](exercises/04-rce-reverse-shell.md)
-
-## Questions
+#### Questions
 
 - What is the basic design of the application?
 - Who are the likely attackers?
@@ -61,3 +47,20 @@ Data read from a file or a cache
 - What areas of the application will likely attract the attention of an attacker?
 - What sorts of techniques might an attacker use to subvert the application?
 - What risks would a successful attack pose to the application?
+
+
+### 2- Attack serface and pen-testing
+
+It consists of identifying the entry points of the system, then run a set of pen-testing payloads to observe how the application behaves. The goal of this activity is to identify any information leak or behaviour that grans access to the maliciouse user.
+
+For this task we can make use of two tools.
+- dirsearch: web path discovery [Github page](https://github.com/maurosoria/dirsearch).
+- Burp Suite: penetration testing and vulnerability finder tool [Link](https://portswigger.net/burp).
+
+## Exercises
+
+* [SQL Injection](exercises/01-sql-injection.md)
+* [XSS - Cross Site Scripting](exercises/02-xss.md)
+* [SSRF - Server Side Request Forgery](exercises/03-ssrf.md)
+* [RCE - Remote Code Execution & Reverse Shell](exercises/04-rce-reverse-shell.md)
+
