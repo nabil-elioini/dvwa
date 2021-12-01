@@ -63,3 +63,11 @@ For this task we can make use of two tools.
 * [XSS - Cross Site Scripting](exercises/02-xss.md)
 * [RCE - Remote Code Execution & Reverse Shell](exercises/04-rce-reverse-shell.md)
 
+## Presentation
+
+In the presentation, you should present your findings and answer the questions. In terms of finding, you can focus on
+- The attack seurface
+- How input is managed internally
+- How to metigate possible attacks for every type of input
+- (optinal) show a demo by modifying the code
+
